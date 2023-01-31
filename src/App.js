@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { useState } from "react";
 
 function App() {
+  const [contador, setContador] = useState(0);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Contador</h1>
+      <h1>{contador}</h1>
+      <div className="colum">
+        <button className="button button-red" onClick={() => setContador(contador - 1)}>Restar -</button>
+        <button  className="button button-gray"  onClick={() => setContador(0)}>Resetear 0 </button>
+        <button className="button button-blue"  onClick={() => setContador(contador + 1)}> Sumar +</button>
+      </div>
     </div>
   );
 }
